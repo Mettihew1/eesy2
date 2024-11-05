@@ -5,11 +5,20 @@ import RangeSlider from "./RangeSlider";
 function Products() {
   const [products, setProducts] = useState();
 
+  const localStorageRange = JSON.parse(localStorage.getItem("range"))
+
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/")
+    // axios
+    //   .get("http://localhost:4000/")
+    //   .then((ev) => setProducts(ev.data))
+    //   .catch((err) => console.log(err));
+
+
+      axios
+      .post("http://localhost:4000/user", {price: localStorageRange})
       .then((ev) => setProducts(ev.data))
       .catch((err) => console.log(err));
+
   }, []);
 
   const dataMap = products?.map((ev, id) => (

@@ -56,12 +56,9 @@ AirbnbThumbComponent.propTypes = {
 };
 
 export default function CustomizedSlider(props) {
-  // const [value, setValue] = React.useState([4, 100]);
-  const localStorageRange = JSON.parse(localStorage.getItem("range"))
-  const [value, setValue] = React.useState([0, 100]);
 
-  console.log("localstorage says: ", localStorageRange);
-  
+  const RangelocalStorage = JSON.parse(localStorage.getItem("range"))
+  const [value, setValue] = React.useState(RangelocalStorage);
 
   const handleChange = (ev, newValue) => {
     setValue(newValue)
@@ -72,7 +69,6 @@ export default function CustomizedSlider(props) {
     props.goParent(value)
   }
 
-  
   return (
     <Box sx={{ width: 320 }}>
       <Box sx={{ m: 3 }} />
@@ -86,14 +82,12 @@ export default function CustomizedSlider(props) {
 
 <form onSubmit={goHandler}>
       <button>Go</button>
-      {/* <button onClick={goHandler}>Go</button> */}
 </form>
-
 
       <AirbnbSlider
         slots={{ thumb: AirbnbThumbComponent }}
         getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
-        defaultValue={[4, 100]}
+        defaultValue={RangelocalStorage}
         onChange={handleChange}
       />
     </Box>
