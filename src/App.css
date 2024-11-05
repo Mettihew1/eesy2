@@ -1,0 +1,94 @@
+
+#flex{
+  display: flex;
+}
+
+#between{
+  display: flex;
+  justify-content: space-between;
+}
+
+#align-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ///////////header ///////////////// */
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons{
+  gap: 10px;
+}
+
+.buttons :hover{
+  cursor: pointer;
+}
+
+/* ////////////////products///////////// */
+
+.products{
+  display: flex;
+}
+
+.productsMap{
+  display: flex;
+  border: 1px solid grey;
+}
+
+.left{
+  min-width: 340px;
+  border: 1px solid grey;
+}
+
+.mui-slider{
+  display: flex;
+}
+/* //////////////////////////cart///////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
